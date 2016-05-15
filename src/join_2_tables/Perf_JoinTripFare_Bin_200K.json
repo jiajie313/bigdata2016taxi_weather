@@ -1,0 +1,24 @@
+
+[
+  {
+     "Name": "Perf_JoinTripFare_Bin_200K",
+     "Type": "STREAMING",
+     "ActionOnFailure": "CONTINUE",
+     "Args": [
+         "-D",
+         "mapreduce.job.reduces=5",
+         "-D",
+         "mapreduce.job.maps=20",     
+         "-files",
+         "s3://spring-2016-bigdata-yy1533/performance/src/join_2_tables/map.py,s3://spring-2016-bigdata-yy1533/performance/src/join_2_tables/reduce.py",
+         "-mapper",
+         "map.py",
+         "-reducer",
+         "reduce.py",
+         "-input",
+         "s3://spring-2016-bigdata-yy1533/performance/data/fare_data_week1.csv,s3://spring-2016-bigdata-yy1533/performance/data/trip_data_200K.csv",
+         "-output",
+         "s3://spring-2016-bigdata-yy1533/performance/output/Perf_JoinTripFare_Bin_200K.txt"]
+  }
+]
+
