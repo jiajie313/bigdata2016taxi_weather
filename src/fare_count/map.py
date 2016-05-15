@@ -34,14 +34,16 @@ def Fare2RangeStr(x):
         res = 'error-unknown2'
     return(res)
 
-FARE_INDEX = 11
+FARE_INDEX = 12
 COUNT_BASIC = 1
 
 DICT = {}
 for line in sys.stdin:
-    info = line.strip().split('\t', 1)
-    info = info[1]
-    info = info.split(',')
+    if not line.strip():
+        continue
+    if re.search('^vendor_id', line):
+        continue
+    info = line.strip().split(',')
     fare_num = info[FARE_INDEX]
     fare_rg_str = Fare2RangeStr(fare_num)
     try:
