@@ -1,16 +1,20 @@
 # Group Project for Big Data Course
 
-# Project Doc
+## Member List:
 
-https://docs.google.com/document/d/1uIjoGhRwKWWaYb4WmKhHhEqfNsRyBg2xMzPG0Efz0Lw/edit
+Yun Yan, Yuchi Zhang, Jie Jia
 
-## Heart-beat of NYC
+## Contents
 
-Goal: Monitor the circadian rhythm of New York City based on CityBike data.
+- Citibikes and Taxi v.s. Weather
+- MapReduce design
+    - In-mapper combiner
+    - Hash-bin
+- Heart-beating of New York City
 
-View: choropleth map of citybike trips in NYC within 24 hours
+## Environment and Dependencies
 
-Data: https://www.citibikenyc.com/system-data
-
-
+Hadoop
+D3.js
+R (ggplot, ggmap)
 
