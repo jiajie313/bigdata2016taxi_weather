@@ -14,7 +14,7 @@ p <- ggplot(data = perf, aes(x = SizeLevel, y = Seconds, fill = Scheme)) +
   geom_text(aes(label = Seconds), position = position_dodge(width = .9),
             hjust = -0.05) +
   xlab('Amount of Tuples') + ylab('Time (s)') +
-  ggtitle('In-Mapping Combiner v.s. Classic') +
+  ggtitle('In-Mapper Combiner v.s. Classic') +
   coord_flip() +
   myGthm
 
