@@ -1,5 +1,5 @@
 /**
- * Created by dean on 2016/5/14.
+ * Created on 2016/5/14.
  */
 function graph1(){
     var margin = {top: 20, right: 20, bottom: 30, left: 50},
@@ -106,11 +106,11 @@ function graph1(){
             });
     }
    // load('hour_taxi.csv',true);
-    load('trip_count_all.csv',true);  //修改为出租车的数据文件
+    load('trip_count_all.csv',true);  //the data file for taxi and time
     var reload = function () {
         d3.selectAll("#svg1 > *").remove();
         var selectValue = document.getElementById('first-type').value;
-        var type = ['trip_count_all.csv ','hour_citibike.csv']; //修改为出租车和自行车的数据文件
+        var type = ['trip_count_all.csv ','hour_citibike.csv']; //the data file of taxi, citibike time file
         load(type[selectValue],false);
     };
     d3.select('#first-type').on('change', reload);
@@ -219,11 +219,11 @@ function graph2(){
                 d3.select(this).transition().duration(500).attr('r', 3.5);
             });
     }
-    load('temp_taxi.csv',true);   //修改为出租车温度对应的文件名
+    load('temp_taxi.csv',true);   //weather and taxi data
     var reload = function () {
         d3.selectAll("#svg2 > *").remove();
         var selectValue = document.getElementById('second-type').value;
-        var type = ['temp_taxi.csv','temp_bike.csv'];//修改为出租车对应的文件名和自行车对应的文件名
+        var type = ['temp_taxi.csv','temp_bike.csv'];//weather join taxi/weather join citibike data
         load(type[selectValue],false);
     };
     d3.select('#second-type').on('change', reload);
