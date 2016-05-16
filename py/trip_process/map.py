@@ -3,7 +3,7 @@ import sys
 	for line in sys.stdin:
 		line = line.strip()
 		
-	if line == '  USAF  WBAN YR--MODAHRMN DIR SPD GUS CLG SKC L M H  VSB MW MW MW MW AW AW AW AW W TEMP DEWP    SLP   ALT    STP MAX MIN PCP01 PCP06 PCP24 PCPXX SD':
+	if line == 'medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude':
 		continue
 	elif len(line) == 14:
 		word = line.split(',')
@@ -19,8 +19,7 @@ import sys
 		time = time.split(':')
 		if time[0]<10:
 			time[0] = '0'+time[0]
-		time = time[0]+time[1]
-		pickuptime = date+time
+		pickuptime = date+time[0]
 		word[5] = pickuptime
 
 		dropoffdate = word[6]
@@ -34,9 +33,8 @@ import sys
 		time = time.split(':')
 		if time[0]<10:
 			time[0] = '0'+time[0]
-		time = time[0]+time[1]
-		dropofftime = date+time
+		dropofftime = date+time[0]
 		word[6] = dropofftime
 		
-		line = '\t'.join(word)
-	print line
+		
+		print '{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}'.format(word[0],word[5],word[6],word[7],word[8],word[9],word[10],word[11],word[12],word[13])
